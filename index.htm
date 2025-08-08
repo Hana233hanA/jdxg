@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交叠星轨</title>
+    <meta name="keywords" content="交叠星轨">
+    <meta name="description" content="交叠星轨 公式网站">
+    <link href="vendor/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="res/home.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body class="home">
+    <div class="home">
+        <div class="head">
+            <div class="head-title unselectable">
+                <img src="imgs/home/hand_text.png">
+            </div>
+            <ul class="menu clearfix">
+                <li class="enable"><a href="story.html">story</a></li>
+                <li class="enable"><a href="team.html">team</a></li>
+                <li class="enable"><a href="download.html">download</a></li>
+            </ul>
+        </div>
+        <ul id="bannerList" class="banner clearfix">
+        </ul>
+        <div class="news-follow clearfix">
+            <div class="news">
+                <ul id="newsList">
+                </ul>
+            </div>
+            <div class="follow">
+                <span style="top:24px;"></span>
+                <span style="top:78px;"><a target="_blank" href="https://space.bilibili.com/373110506?spm_id_from=333.788.b_765f7570696e666f.1"></a></span>
+                <span style="top:134px;"><a target="_blank" href="https://www.taptap.com/app/179448"></a></span>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="res/common.js"></script>
+    <script src="res/config.js"></script>
+    <script>
+        //loading
+        let aObj = document.getElementById("bgm")
+        let initList = [
+            "imgs/home/bg_sonw.png",
+            "imgs/home/Follows.png",
+            "imgs/home/footer_index.png",
+            "imgs/home/menu.png"
+        ]
+        for (let i = 0;i < BANNER.length;i++) {
+            initList.push("imgs/banner/" + BANNER[i].image)
+        }
+        Loading.callback = function() {
+            $('div.head-title').css('opacity',1)
+            aObj.pause()
+            aObj.currentTime = 0
+            aObj.play()
+        }
+        Loading.init(initList)
+        //make news
+        let newsList = $("#newsList")
+        let newsLength = NEWS.length > 3 ? 3 : NEWS.length
+        for (let i = 0; i < newsLength; i++) {
+            let item = ""
+            switch (NEWS[i].type) {
+                case "voice":
+                    item = "<a href=\"javascript: showVoiceBox(1," + i + ");\"><span>" + NEWS[i].date + "</span>" + NEWS[i].title + "</a>";
+                    break;
+                case "page":
+                    item = "<a href=\"" + NEWS[i].link + "\"><span>" + NEWS[i].date + "</span>" + NEWS[i].title + "</a>";
+                    break;
+                case "text":
+                    item = "<a href=\"javascript:void(0);\"><span>" + NEWS[i].date + "</span>" + NEWS[i].title + "</a>";
+                    break;
+            }
+            $(newsList).append("<li>" + item + "</li>")
+        }
+    </script>
+</body>
+</html>
+<!--<!DOCTYPE HTML>
+<html>
+<body>
+
+<h1>交叠星轨</h1>
+
+<p>
+    <a href="https://cloud.189.cn/t/NRJBVz6J3qma">下载（电脑端）</a>
+    <br><img src="C:\Users\24331\Desktop\电脑端.jpg" /></br>
+</p>
+
+<p>
+    <a href="https://cloud.189.cn/t/IJbyqevYrqya">下载（安卓端）</a>
+    <br><img src="C:\Users\24331\Desktop\安卓端.jpg" /></br>
+</p>
+</body>
+</html>
+--!>

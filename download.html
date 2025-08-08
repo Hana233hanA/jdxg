@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交叠星轨</title>
+    <meta name="keywords" content="交叠星轨">
+    <meta name="description" content="交叠星轨 公式网站">
+    <link href="vendor/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="res/home.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <div class="inner-snow"></div>
+        <div class="inner-page">    
+            <div class="side-bar">
+                <ul class="side-menu">
+                    <li><a class="enable" href="index.html"></a></li>
+                    <li><a class="enable" href="story.html"></a></li>
+                    <li><a class="enable" href="team.html"></a></li>
+                    <li><a class="enable" href="download.html"></a></li>
+                </ul>
+                <div class="side-follow">
+                    <span style="top:24px;"></span>
+                    <span style="top:78px;"><a target="_blank" href="https://space.bilibili.com/373110506?spm_id_from=333.788.b_765f7570696e666f.1"></a></span>
+                    <span style="top:134px;"><a target="_blank" href="https://www.taptap.com/app/179448"></a></span>
+                </div>
+            </div>
+            <div class="content unselectable">
+                <div class="title">
+                    <img src="imgs/download/tittle_download.png">
+                </div>
+                <div style="padding-top: 44px;padding-left: 12px;">
+                    <body link="white" alink="white" vlink="white">
+                    <p style="color:rgb(235,235,255);font-size:20px;line-height: 25px">
+                        下载链接由<a href="https://www.tiaozhan.com">西安交通大学团委挑战网</a>提供技术支持。
+                        <br /><br /><a href="https://download.tiaozhan.com/jdxg/jdxg_1.0_PC.rar">下载电脑端（点击文字下载）</a>
+                        <br /><br /><a href="https://download.tiaozhan.com/jdxg/jdxg_1.0_Android.apk">下载安卓端（点击文字下载）</a>        
+                    </p>
+                    </body>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="res/common.js"></script>
+    <script>
+        let initList = [
+            "imgs/story/Follows.png",
+            "imgs/story/hand_bg2.png",
+            "imgs/story/menu2.png",
+            "imgs/story/sidebar_bg.png",
+            "imgs/story/Story.png",
+            "imgs/story/tittle_story.png"
+        ]
+        Loading.init(initList)
+    </script>
+    <script type="module">
+        import tenzor from './tenzor.js'
+        console.log('%c' + tenzor, font(4, 'Consolas'))
+        console.log('%c西安交通大学团委挑战网', font(22))
+        console.log('%cCopyright  2001-2018 TIAOZHAN.', font(12))
+        console.log('%c想加入挑战？请发送邮件到contact@tiaozhan.com（注明“来自 console”）', 'color:red')
+    </script>
+</body>
+
+</html>
